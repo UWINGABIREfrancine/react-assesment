@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 function AboutUs(){
-const count[count+1]=useState(0);
+const [count,setCount]=useState(0);
 
     return(
         <div>
-            <h1>csamz-collegio santo Antonio Maria Zaccaria</h1>
-        </div>
-        
+            <p count:{count}></p>
+           <button likes={()=> setcount(count+1)}></button>
             
-        
-    )
+        </div>
+    );
 }
