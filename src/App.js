@@ -1,18 +1,30 @@
 import React from "react";
-import { Link, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Home";
+import AboutUs from "./AboutUs";
+import Exam from "./Exam";
+import Module from "./Module";
 
 function App() {
   return (
-    <div>
-      <h1>Home</h1>
+    <BrowserRouter>
+      <div>
+        <nav>
+          <Link to="/home">Home</Link> |
+          <Link to="/about">About Us</Link>|
+          <Link to="/exam">Exam</Link>|
+          <Link to = "/module">Module</Link>
+        </nav>
 
-      <Link to="/home"> Home </Link>
-
-      <Routes>
-        <Route path="/home" element={<Home />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/exam" element={<Exam />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/module" element={<Module />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
